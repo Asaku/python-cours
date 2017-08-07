@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import MySQLdb, random, string
 
 conn = MySQLdb.connect(host = "localhost", user = "root", passwd = "", db = "aston")
@@ -11,15 +12,21 @@ try:
 	cursor.execute ("INSERT INTO email(email) VALUE('"+newEmail+"@email.fr')")
 	conn.commit()
 except MySQLdb.IntegrityError:
-	print ("existe deja")
+	print ("Already in the database")
 
 cursor.execute ("SELECT * from email")
 row = cursor.fetchall()
 #row = cursor.fetchone()
-print (row)
+#print (row)
 cursor.close()
 conn.close()
 
 
-
-#INSERT INTO table (nom_colonne_1, nom_colonne_2, ... VALUES ('valeur 1', 'valeur 2', ...)
+def findOneById(id):
+	conn = MySQLdb.connect(host = "localhost", user = "root", passwd = "", db = "aston")
+	cursor = conn.cursor()
+	cursor.execute ("SELECT * from email WHERE id = %s"%id)
+	row = cursor.fetchone() 
+	cursor.close()
+	conn.close()
+	return row
