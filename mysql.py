@@ -1,3 +1,4 @@
+#coding:utf-8
 #!/usr/bin/python3
 import MySQLdb, random, string
 
@@ -20,7 +21,6 @@ row = cursor.fetchall()
 #print (row)
 cursor.close()
 conn.close()
-
 
 def findOneById(id):
 	conn = MySQLdb.connect(host = "localhost", user = "root", passwd = "", db = "aston")
