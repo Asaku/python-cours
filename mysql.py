@@ -2,7 +2,7 @@
 #!/usr/bin/python3
 import MySQLdb, random, string
 
-def insertEmail(newEmail)
+def insertEmail(newEmail):
 	conn = MySQLdb.connect(host = "localhost", user = "root", passwd = "", db = "aston")
 	cursor = conn.cursor()
 
