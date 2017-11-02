@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+# coding: utf-8
+
 import math as toto
 
 #Variable
@@ -27,4 +29,7 @@ def maFunction(param1, param2='hihouuuu'):
 	print(param2)
 
 maFunction(1)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5543595d1a8478779e88dc1c705e12a041dee332
