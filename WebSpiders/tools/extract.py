@@ -1,6 +1,6 @@
 import re
 
-def extract(str):
+def extractEmail(str):
 	match = re.search(r'[\w\.-]+@[\w\.-]+', str)
 	return match.group(0)
 

@@ -1,23 +1,25 @@
 #coding:utf-8
 #!/usr/bin/python3
 
-import MySQLdb, random, string
+import MySQLdb
 
-def insertEmail(newEmail):
-	conn = MySQLdb.connect(host = "localhost", user = "root", passwd = "", db = "aston")
-	cursor = conn.cursor()
+class Mysql:
+	def __init__(self):
+		self.mysql = MySQLdb.connect(host = "localhost", user = "root", passwd = "", db = "aston")
 
-	try:
-		cursor.execute ("INSERT INTO email(email) VALUE('"+newEmail+"')")
-		conn.commit()
-	except MySQLdb.IntegrityError:
-		print ("Already in the database")
+	def insertEmail(self, newEmail):
+		cursor = self.mysql.cursor()
+		try:
+			cursor.execute("INSERT INTO email(email) VALUE('"+newEmail+"')")
+			self.mysql.commit()
+		except MySQLdb.IntegrityError:
+			print ("Already in the database")
 
-def findOneById(id):
-	conn = MySQLdb.connect(host = "localhost", user = "root", passwd = "", db = "aston")
-	cursor = conn.cursor()
-	cursor.execute ("SELECT * from email WHERE id = %s"%id)
-	row = cursor.fetchone() 
-	cursor.close()
-	conn.close()
-	return row
+	def findOneById(self, id):
+		conn = self.mysql.connect(host = "localhost", user = "root", passwd = "", db = "aston")
+		cursor = conn.cursor()
+		cursor.execute("SELECT * from email WHERE id = %s" % id)
+		row = cursor.fetchone()
+		cursor.close()
+		conn.close()
+		return row
