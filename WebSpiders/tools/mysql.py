@@ -1,18 +1,18 @@
 #coding:utf-8
 #!/usr/bin/python3
 
-import MySQLdb
+import sqlite3
 
 class Mysql:
 	def __init__(self):
-		self.mysql = MySQLdb.connect(host = "localhost", user = "root", passwd = "", db = "aston")
+		self.mysql = sqlite3.connect(host = "localhost", user = "root", passwd = "", db = "aston")
 
 	def insertEmail(self, newEmail):
 		cursor = self.mysql.cursor()
 		try:
 			cursor.execute("INSERT INTO email(email) VALUE('"+newEmail+"')")
 			self.mysql.commit()
-		except MySQLdb.IntegrityError:
+		except sqlite3.IntegrityError:
 			print ("Already in the database")
 
 	def findOneById(self, id):
@@ -23,3 +23,7 @@ class Mysql:
 		cursor.close()
 		conn.close()
 		return row
+
+if __name__ == '__main__':
+
+
