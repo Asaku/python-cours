@@ -9,7 +9,7 @@ from scapy.all import *
 def main():
     src_net = "192.168.1."
     dst_ip = "127.0.0.1"
-    dst_port = 80
+    dst_port = 85
 
     for src_host in range(1, 254):
 
