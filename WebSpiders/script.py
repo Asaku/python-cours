@@ -5,6 +5,7 @@ import requests
 from tools import extract as extract
 from tools import mysql as mysql
 
+mysql = mysql.Mysql()
 
 r = requests.get("https://www.tripadvisor.fr/Restaurant_Review-g187147-d699456-Reviews-Le_Cinq-Paris_Ile_de_France.html")
 newEmail = extract.extractEmail(r.content.decode('utf-8'))

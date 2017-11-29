@@ -5,7 +5,10 @@ import sqlite3
 
 class Mysql:
 	def __init__(self):
-		self.mysql = sqlite3.connect(host = "localhost", user = "root", passwd = "", db = "aston")
+		try:
+			self.mysql = sqlite3.connect(host = "localhost", user = "root", passwd = "root")
+		except:
+			print "ERROR"
 
 	def insertEmail(self, newEmail):
 		cursor = self.mysql.cursor()
@@ -23,7 +26,3 @@ class Mysql:
 		cursor.close()
 		conn.close()
 		return row
-
-if __name__ == '__main__':
-
-
