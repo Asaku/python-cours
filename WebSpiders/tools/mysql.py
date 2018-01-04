@@ -32,6 +32,7 @@ class Mysql:
 		cursor.execute("use spider")
 		try:
 			cursor.execute("INSERT INTO email(email) VALUE('"+newEmail+"')")
-			self.mysql.commit()
+			self.bdd.commit()
 		except:
 			print ("Already in the database")
+
