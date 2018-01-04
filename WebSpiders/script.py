@@ -6,11 +6,6 @@ from tools import extract as extract
 from tools import mysql as mysql
 from time import *
 
-def sleep():
-	print "haha"
-
-sleep(10)
-
 mysql = mysql.Mysql()
 count = 0
 while True:

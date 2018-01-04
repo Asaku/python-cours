@@ -11,6 +11,6 @@ rep,non_rep = srp(mac)
 
 #Sniff
 
-rep = sniff(filter="host 192.168.1.27")
+rep = sniff(filter="host 192.168.1.24")
 
 rep.show()
