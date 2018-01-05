@@ -4,20 +4,25 @@
 import MySQLdb as mysql
 import warnings
 
+'''
+sudo apt-get install libmysqlclient-dev python-pip
+pip install mysql-server
+'''
+
 warnings.filterwarnings('error')
 
 class Mysql:
 	def __init__(self):
 		try:
-			self.bdd = MySQLdb.connect(host = "localhost", user = "root", passwd = "root")
+			self.db = mysql.connect(host = "localhost", user = "root", passwd = "root")
 		except:
 			print "ERROR"
 
-		cursor = self.bdd.cursor()
+		cursor = self.db.cursor()
 		try:
 			cursor.execute("create database IF NOT EXISTS spider")
 		except:
-			print "BDD already exist"
+			print "db already exist"
 
 		cursor.execute('use spider')
 		try:
@@ -25,14 +30,14 @@ class Mysql:
 		except:
 			print "table already exist"
 
-		self.bdd.commit()
+		self.db.commit()
 
 	def insertEmail(self, newEmail):
-		cursor = self.bdd.cursor()
+		cursor = self.db.cursor()
 		cursor.execute("use spider")
 		try:
 			cursor.execute("INSERT INTO email(email) VALUE('"+newEmail+"')")
-			self.bdd.commit()
+			self.db.commit()
 		except:
 			print ("Already in the database")
 
