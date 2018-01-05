@@ -4,6 +4,7 @@
 import requests
 from tools import extract as extract
 from tools import mysql as mysql
+from tools import mongo as mongo
 from time import *
 
 mysql = mysql.Mysql()
@@ -15,10 +16,9 @@ while True:
 		break
 	urls = extract.extractUrl(r.content.decode('utf-8'))
 
-	for url in urls:
+	for url in set(urls):
 		if "tripadvisor" in url and "media-cdn" not in url:
 			req = requests.get("https://www.tripadvisor.fr/"+url)
-
 			newEmail = extract.extractEmail(req.content.decode('utf-8'))
 			if newEmail:
 				mysql.insertEmail(newEmail)

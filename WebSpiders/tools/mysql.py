@@ -1,7 +1,7 @@
 #coding:utf-8
 #!/usr/bin/python3
 
-import MySQLdb as mysql
+import mysql as mysql
 import warnings
 
 '''
@@ -11,6 +11,8 @@ pip install mysql-server
 
 warnings.filterwarnings('error')
 
+print dir(mysql)
+mysql.connect(host = "localhost", user = "root", passwd = "root")
 class Mysql:
 	def __init__(self):
 		try:
