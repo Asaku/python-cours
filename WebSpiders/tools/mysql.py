@@ -11,9 +11,7 @@ pip install mysql-server
 
 warnings.filterwarnings('error')
 
-print dir(mysql)
-mysql.connect(host = "localhost", user = "root", passwd = "root")
-class Mysql:
+class Db:
 	def __init__(self):
 		try:
 			self.db = mysql.connect(host = "localhost", user = "root", passwd = "root")

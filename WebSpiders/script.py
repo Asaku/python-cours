@@ -1,13 +1,12 @@
 #coding:utf-8
 #!/usr/bin/python3
 
-import requests
+import requests, param
 from tools import extract as extract
-from tools import mysql as mysql
-from tools import mongo as mongo
+from tools import param.db as orm
 from time import *
 
-mysql = mysql.Mysql()
+mysql = orm.Db()
 count = 0
 while True:
 	r = requests.get("https://www.tripadvisor.fr/Restaurant_Review-g187147-d699456-Reviews-Le_Cinq-Paris_Ile_de_France.html")

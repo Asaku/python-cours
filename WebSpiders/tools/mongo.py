@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 import datetime
 
-class Mongodb:
+class Db:
 	def __init__(self):
 		self.client = MongoClient('localhost', 27017)
 		self.db = self.client.spider
