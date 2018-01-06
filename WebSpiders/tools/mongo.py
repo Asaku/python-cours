@@ -11,6 +11,5 @@ class Db:
 			post = {"email": newEmail, "date": datetime.datetime.utcnow()}
 			posts = self.db.posts
 			post_id = posts.insert_one(post).inserted_id
-			print post_id
 		except:
 			print ("Already in the database")

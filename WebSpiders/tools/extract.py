@@ -6,7 +6,7 @@ def extractUrl(str):
 	return urls
 
 def extractEmail(str):
-	match = re.search(r'[\w\.-]+@[\w\.-]+', str)
+	match = re.search(r'[0-9a-z]+@[a-z0-9\.]+', str)
 	if match:
 		return match.group(0)
 	
