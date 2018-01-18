@@ -19,9 +19,9 @@ for line in lines:
             if r.url != "http://dvwa.com/login.php":
                 print("The password is :", password)
                 end = time.time()
-                print end - start
+                print(end - start)
                 raise SystemExit(0)
     else:
-        print "ERROR"
+        print("ERROR")
 
     #time.sleep(1)
