@@ -85,17 +85,28 @@ def exo11():
 	print("Prix HT : ", total)
 	print("Prix TTC : ", ttc*total)
 
-import random
+def exo12():
+	nombre=int(raw_input("entrer votre nombre : "))
+	count = nombre
+	while nombre > 1:
+		nombre = nombre - 1
+		count = count * nombre
+	print(count)
+
+import random, emoji
+
 def nb_mystere():
-	i = 0
-	rands = random.randint(1,100)
-	print rands
-	while i!= 1:
-		entree = int(raw_input("Veuillez saisir un nombre : "))
-		if entree < rands:
+	i = 9
+	rand = random.randint(1, 100)
+	while i > 1:
+		entree = int(input("Veuillez saisir un nombre : "))
+		if entree < rand:
 			print("Le chiffre est superieur")
-		elif entree > rands:
+		elif entree > rand:
 			print("Le chiffre est inferieur")
-		elif entree == rands:
+		elif entree == rand:
 			print("Gagné")
 			break
+		i = i - 1
+		print(emoji.emojize(":heart:"*i))
+nb_mystere()
