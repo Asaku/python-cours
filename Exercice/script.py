@@ -4,93 +4,91 @@
 def exo01():
 	i=0
 	while i <= 500:
-		print "Je dois faire des sauvegardes régulières de mes fichiers."
+		print("Je dois faire des sauvegardes régulières de mes fichiers.")
 		i = i + 1
 
 def exo02():
 	for i in range(0,1000):
 		if i % 2 != 0:
-			print i
+			print(i)
 
 def exo03():
 	i=0
 	while i <= 10:
-		print i*13
+		print(i*13)
 		i=i+1
 
 def exo04():
-	mot=raw_input("Merci de saisir un mot : ")
-	print len(mot)
+	word = raw_input("Merci de saisir un mot : ")
+	print(len(word))
 
 def exo05():
-	nombre=int(raw_input("Merci de saisir un nombre entier : "))
-	if nombre % 2 != 0:
-		print "Votre nombre est impair."
+	number = int(raw_input("Merci de saisir un nombre entier : "))
+	if number % 2 != 0:
+		print("Votre nombre est impair.")
 	else:
-		print "Votre nombre est pair."
+		print("Votre nombre est pair.")
 
 def exo06():
-	nombre1=int(raw_input("Entrez un nombre entre 10 et 20 :"))
-	if nombre1 < 10:
-		print "Plus grand!!"
+	number = int(raw_input("Entrez un nombre entre 10 et 20 :"))
+	if number < 10:
+		print("Plus grand!!")
 		exo06()
-	if nombre1 > 20:
-		print "Plus petit!!"
+	if number > 20:
+		print("Plus petit!!")
 		exo06()
-	print "ok"
+	print("ok")
 
 def exo07():
 	user_input = int(raw_input("Entrez un nombre entier: "))
-	print range(int(user_input)+1, int(user_input)+11)
+	print(range(int(user_input)+1, int(user_input)+11))
 
 def exo08():
 	nb = int(raw_input("Entrez un nombre entier :"))
 	for i in range(1,11):
-		print i , "*", nb , "=", i*nb
-
+		print(i , "*", nb , "=", i*nb)
 
 def exo09():
 	nombre=int(raw_input("entrer votre nombre"))
 	liste=[]
 	for i in range(0,nombre+1,1):
 		liste.append(i)
-	print sum(liste)
+	print(sum(liste))
 
 def exo10():
 	nombre=int(raw_input("entrer votre nombre : "))
 	if nombre >= 6 and nombre <= 7:
-		print "Vous etes poussin !"
+		print("Vous etes poussin !")
 	elif nombre >= 8 and nombre <= 9:
-		print "Vous etes pupille !"
+		print("Vous etes pupille !")
 	elif nombre >= 10 and nombre <= 11:
-		print "Vous etes minime !"
+		print("Vous etes minime !")
 	elif nombre > 12:
-		print "Vous etes Cadet !"
-
+		print("Vous etes Cadet !")
 
 def exo11():
 	i=0
-	nbreArticle=int(raw_input("Combien avez-vous d'articles ? "))
-	tableau=[]
-	while i!=nbreArticle:
-		i+=1
+	nbrArticle = int(raw_input("Combien avez-vous d'articles ? "))
+	listPriceHt = []
+	while i != nbrArticle:
+		i += 1
 		prixHT=float(raw_input("Combien coûte l'article ? "))
-		tableau.append(prixHT)
+		listPriceHt.append(prixHT)
 
-	ttc=1.20
-	total=sum(tableau)
+	ttc = 1.20
+	total= sum(listPriceHt)
 
-	print("Nombre d'articles : ", nbreArticle)
-	print(tableau)
+	print("Nombre d'articles : ", nbrArticle)
+	print(listPriceHt)
 	print("Prix HT : ", total)
 	print("Prix TTC : ", ttc*total)
 
 def exo12():
-	nombre=int(raw_input("entrer votre nombre : "))
-	count = nombre
-	while nombre > 1:
-		nombre = nombre - 1
-		count = count * nombre
+	number = int(raw_input("entrer votre nombre : "))
+	count = number
+	while number > 1:
+		number = number - 1
+		count = count * number
 	print(count)
 
 import random, emoji
@@ -99,12 +97,12 @@ def nb_mystere():
 	i = 9
 	rand = random.randint(1, 100)
 	while i > 1:
-		entree = int(input("Veuillez saisir un nombre : "))
-		if entree < rand:
+		enter = int(input("Veuillez saisir un nombre : "))
+		if enter < rand:
 			print("Le chiffre est superieur")
-		elif entree > rand:
+		elif enter > rand:
 			print("Le chiffre est inferieur")
-		elif entree == rand:
+		elif enter == rand:
 			print("Gagné")
 			break
 		i = i - 1
