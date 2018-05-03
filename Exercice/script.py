@@ -19,18 +19,18 @@ def exo03():
 		i=i+1
 
 def exo04():
-	word = raw_input("Merci de saisir un mot : ")
+	word = input("Merci de saisir un mot : ")
 	print(len(word))
 
 def exo05():
-	number = int(raw_input("Merci de saisir un nombre entier : "))
+	number = int(input("Merci de saisir un nombre entier : "))
 	if number % 2 != 0:
 		print("Votre nombre est impair.")
 	else:
 		print("Votre nombre est pair.")
 
 def exo06():
-	number = int(raw_input("Entrez un nombre entre 10 et 20 :"))
+	number = int(input("Entrez un nombre entre 10 et 20 :"))
 	if number < 10:
 		print("Plus grand!!")
 		exo06()
@@ -40,23 +40,23 @@ def exo06():
 	print("ok")
 
 def exo07():
-	user_input = int(raw_input("Entrez un nombre entier: "))
+	user_input = int(input("Entrez un nombre entier: "))
 	print(range(int(user_input)+1, int(user_input)+11))
 
 def exo08():
-	nb = int(raw_input("Entrez un nombre entier :"))
+	nb = int(input("Entrez un nombre entier :"))
 	for i in range(1,11):
 		print(i , "*", nb , "=", i*nb)
 
 def exo09():
-	nombre=int(raw_input("entrer votre nombre"))
+	nombre=int(input("entrer votre nombre"))
 	liste=[]
 	for i in range(0,nombre+1,1):
 		liste.append(i)
 	print(sum(liste))
 
 def exo10():
-	nombre=int(raw_input("entrer votre nombre : "))
+	nombre=int(input("entrer votre nombre : "))
 	if nombre >= 6 and nombre <= 7:
 		print("Vous etes poussin !")
 	elif nombre >= 8 and nombre <= 9:
@@ -68,11 +68,11 @@ def exo10():
 
 def exo11():
 	i=0
-	nbrArticle = int(raw_input("Combien avez-vous d'articles ? "))
+	nbrArticle = int(input("Combien avez-vous d'articles ? "))
 	listPriceHt = []
 	while i != nbrArticle:
 		i += 1
-		prixHT=float(raw_input("Combien coûte l'article ? "))
+		prixHT=float(input("Combien coûte l'article ? "))
 		listPriceHt.append(prixHT)
 
 	ttc = 1.20
@@ -84,7 +84,7 @@ def exo11():
 	print("Prix TTC : ", ttc*total)
 
 def exo12():
-	number = int(raw_input("entrer votre nombre : "))
+	number = int(input("entrer votre nombre : "))
 	count = number
 	while number > 1:
 		number = number - 1
