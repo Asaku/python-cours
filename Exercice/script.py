@@ -101,8 +101,6 @@ def exo13():
 	binaire.reverse()
 	print(''.join(binaire))
 
-exo13()
-
 import random, emoji
 
 def nb_mystere():
