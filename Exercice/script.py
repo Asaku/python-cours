@@ -91,6 +91,18 @@ def exo12():
 		count = count * number
 	print(count)
 
+def exo13():
+	number = int(input("entrer votre nombre : "))
+	binaire = []
+	while number >= 1:
+		modulo = int(number % 2)
+		binaire.append(str(modulo))
+		number = int(number / 2)
+	binaire.reverse()
+	print(''.join(binaire))
+
+exo13()
+
 import random, emoji
 
 def nb_mystere():
@@ -107,4 +119,3 @@ def nb_mystere():
 			break
 		i = i - 1
 		print(emoji.emojize(":heart:"*i))
-nb_mystere()
