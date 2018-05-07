@@ -5,26 +5,32 @@ import tkinter, random
 
 grid = []
 
+def generateEmptyGrid():
+    while len(grid) != 9:
+        grid.append([0,0,0,0,0,0,0,0,0])
+    return grid
+
 def checkNumber(number, position):
-    for line in grid:
-        try:
-            if line[position] == number:
-                return False
-        except:
-            pass
+    for l in grid:
+        if l[position] == number:
+            return False
     return True
 
 def generateGrid():
-    while len(grid) != 9:
-        grid.append([])
+    grid = generateEmptyGrid()
     for line in grid:
-        while len(line) != 9:
-            number = random.randint(0, 9)
-            if not line.count(number):
-                if checkNumber(number, len(line)):
-                    line.append(number)
+        for idx, p in enumerate(line):
+            print("idx etape 1 ", idx)
+            number = random.randint(1, 9)
+            # check if number is in columns
+            print("idx etape 2 ", idx)
+            if checkNumber(number, idx):
+                line.append(number)
+    return grid
 
-    for l in grid:
-        print(l)
 
-generateGrid()
+grid = generateGrid()
+
+
+# for l in grid:
+#     print(l)
