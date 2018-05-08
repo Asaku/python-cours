@@ -23,7 +23,7 @@ def checkColumn(position, number):
     return True
 
 # check if number is in line
-def checkLine( line, number):
+def checkLine(line, number):
     if line.count(number) > 0:
         return False
     return True
@@ -40,7 +40,6 @@ def generateGrid():
                     check = True
 
             line[idx] = number
-        print(line)
     return grid
 
 grid = generateGrid()
