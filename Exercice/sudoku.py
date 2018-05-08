@@ -15,28 +15,35 @@ def generateEmptyGrid():
         grid.append([0,0,0,0,0,0,0,0,0])
     return grid
 
-# check if number is in columns
-def checkNumber(position, line):
-    number = generateNumber()
-    while line.count(number) > 0:
-        number = generateNumber()
-    # for l in grid:
-    #     if l[position] == number:
-    #         checkNumber(position, line)
+# check if number is in column
+def checkColumn(position, number):
+    for l in grid:
+        if l[position] == number:
+            return False
+    return True
 
-    return number
+# check if number is in line
+def checkLine( line, number):
+    if line.count(number) > 0:
+        return False
+    return True
 
 def generateGrid():
     grid = generateEmptyGrid()
     for line in grid:
         for idx, p in enumerate(line):
-            number = checkNumber(idx, line)
+            number = 0
+            check = False
+            while not check:
+                number = generateNumber()
+                if checkLine(line, number) and checkColumn(idx, number):
+                    check = True
+
             line[idx] = number
+        print(line)
     return grid
 
-
 grid = generateGrid()
-
 
 for l in grid:
     print(l)
