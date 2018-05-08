@@ -20,9 +20,9 @@ def checkNumber(position, line):
     number = generateNumber()
     while line.count(number) > 0:
         number = generateNumber()
-    for l in grid:
-        if l[position] == number:
-            checkNumber(position, line)
+    # for l in grid:
+    #     if l[position] == number:
+    #         checkNumber(position, line)
 
     return number
 
