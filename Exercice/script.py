@@ -100,3 +100,38 @@ def exo13():
 		number = int(number / 2)
 	binaire.reverse()
 	print(''.join(binaire))
+
+def exo14():
+	a = 3
+	somme_a = 0
+	b = 5
+	somme_b = 0
+	while a < 1000:
+		a = a + 3
+		somme_a = a + somme_a
+	while b < 1000:
+		b = b + 5
+		somme_b = b + somme_b
+	print(somme_a)
+	print(somme_b)
+
+def exo15():
+	a = 0
+	fib = 1
+	start = 0
+	while a < 1500:
+		a = a + 1
+		n = fib + start
+		start = fib
+		fib = n
+	print(fib)
+
+def exo16(a = 1):
+	i = 1
+	while i < 5:
+		if not (a/i).is_integer():
+			exo16(a + 1)
+		i = i + 1
+	print(a)
+
+exo16()
