@@ -133,5 +133,3 @@ def exo16(a = 1):
 			exo16(a + 1)
 		i = i + 1
 	print(a)
-
-exo16()
