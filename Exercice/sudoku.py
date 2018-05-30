@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-import tkinter, random
+import random
 import sys
 sys.setrecursionlimit(8000)
 

@@ -3,14 +3,21 @@
 
 stick = 21
 
-print("Welcome to the Nim game")
-
-print("Choose the number of player, 1 vs computeur or 1 vs 1")
-
-#choice = input("1 for computeur, 2 for two player")
+print("|||| Welcome to the Nim game ||||")
 
 print(" | "*stick)
 
-while stick > 0:
+lastPlayer = None
 
-    number = input("Player ", player)
+while stick > 0:
+    number = int(input("Player 1"))
+    stick = stick - number
+    print(" | " * stick)
+    lastPlayer = "Player 1"
+
+    number2 = int(input("Player 2"))
+    stick = stick - number2
+    print(" | " * stick)
+    lastPlayer = "Player 2"
+
+print("Lose "+lastPlayer)

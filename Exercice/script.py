@@ -133,3 +133,27 @@ def exo16(a = 1):
 			exo16(a + 1)
 		i = i + 1
 	print(a)
+
+def bubule():
+	list = [4, 8, 415, 1, 25, 75, 6]
+	last = True
+	limit = len(list)
+	while last:
+		for i in range(0, limit-1):
+			last = False
+			if (list[i] > list[i+1]):
+				list[i+1], list[i] = list[i], list[i+1]
+				last = True
+		limit = limit - 1
+	print(list)
+
+def insertion():
+	list = [4, 8, 415, 1, 25, 75, 6]
+	for i in range(1, len(list)):
+		current = list[i]
+		j = i
+		while j > 0 and list[j - 1] > current:
+			list[j] = list[j - 1]
+			j = j - 1
+		list[j] = current
+	print(list)
