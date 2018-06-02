@@ -9,3 +9,9 @@ cursor = cnx.cursor()
 
 print(cursor)
 
+
+
+
+
+
+
