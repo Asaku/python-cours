@@ -20,4 +20,4 @@ while stick > 0:
     print(" | " * stick)
     lastPlayer = "Player 2"
 
-print("Lose "+lastPlayer)
+print("Lose " + lastPlayer)

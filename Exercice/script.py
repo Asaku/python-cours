@@ -157,3 +157,11 @@ def insertion():
 			j = j - 1
 		list[j] = current
 	print(list)
+
+def search(arr, x):
+	for i in range(len(arr)):
+
+		if arr[i] == x:
+			return i
+
+	return -1
