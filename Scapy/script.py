@@ -4,13 +4,11 @@
 from scapy.all import *
 
 
-#Ping
-mac = Ether() / IP(dst='192.168.1.27') / ICMP()
+t = Ether()
 
-rep,non_rep = srp(mac)
+#change the source mac
+t.src = 'ddd'
 
-#Sniff
+t.show()
 
-rep = sniff(filter="host 192.168.1.24")
-
-rep.show()
+sendp(t)
