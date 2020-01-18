@@ -14,3 +14,5 @@ def nb_mystere():
 			break
 		i = i - 1
 		print(emoji.emojize(":heart:"*i))
+
+nb_mystere()
