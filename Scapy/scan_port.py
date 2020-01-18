@@ -1,18 +1,17 @@
-from scapy.all import IP, TCP, sr
+from scapy.all import IP, TCP, sr1
 
 def scan_port(host, port):
-	reponse = sr( IP(dst=host)/TCP(dport=port), timeout=0.5, verbose=True )
-	print(reponse)
+	reponse = sr1( IP(dst=host)/TCP(dport=port), timeout=0.5, verbose=False )
 
 	if reponse is None:
 		print ("Port %s close" % port)
 	else:
 		print ("Port %s open" % port)
 
-scan_port("192.168.56.1", 3306)
-exit()
+host = str(input("Host to scan: "))
+p_min = int(input("Port min: "))
+p_max = int(input("Port max: "))
 
-x = range(8000)
-for port in x:
-	scan_port("www.google.fr", port)
+for port in range(p_min, p_max):
+	scan_port(host, port)
 
