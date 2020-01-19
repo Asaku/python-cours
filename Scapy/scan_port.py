@@ -14,4 +14,3 @@ p_max = int(input("Port max: "))
 
 for port in range(p_min, p_max):
 	scan_port(host, port)
-
