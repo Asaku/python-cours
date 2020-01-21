@@ -1,5 +1,4 @@
 import win32clipboard as c
-import re, time
 
 def get_clip():
     c.OpenClipboard()
